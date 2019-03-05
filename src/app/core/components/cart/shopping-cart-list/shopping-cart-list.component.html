@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+     <ul class="list-group">
+       <li *ngFor="let drink of drinkList"  class="list-group-item">
+         <span class="cart-item__name"><i class="glyphicon glyphicon-ok-sign"></i> {{drink.drinkName}}</span>
+         <span class="cart-item__price">{{drink.price[0]}} x {{drink.price.length}}</span>
+       </li>
+     </ul>
+    <div class="cart__total">Total: {{total}}</div>
+  </div>
+</div>

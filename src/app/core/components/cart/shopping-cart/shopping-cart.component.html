@@ -1,0 +1,8 @@
+<div>
+  <div class="row">
+    <!-- List of Products -->
+    <div class="col-sm-6 mb-3" *ngFor="let drink of Drinks">
+      <app-shopping-cart-item [drink]="drink"></app-shopping-cart-item>
+    </div>
+  </div>
+</div>

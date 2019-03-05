@@ -1,0 +1,35 @@
+<div class="item drink-padding-bottom">
+  <div class=" mb-r">
+    <div class="card card-cascade wider">
+      <!--Card image-->
+      <div class="view overlay hm-white-slight">
+        <img [src]="drink.imageUrl" class="img-fluid img" alt="product image">
+        <a>
+          <div class="mask waves-effect waves-light" mdbRippleRadius></div>
+        </a>
+      </div>
+      <!--/.Card image-->
+      <!--Card content-->
+      <div class="card-body text-center no-padding">
+        <!--Category & Title-->
+        <div> <i class="fas fa-magic mr-1"></i><a href="">{{drink.drinkName}}: {{drink.price}} VND</a></div>
+        <!--Card footer-->
+        <br>
+        <div>
+          <div class="row">
+            <div class="col-sm-6" align="right"> 
+              <button (click)="AddDrink(drink)" class="btn btn-primary w-100">Add to cart
+              </button></div>
+            <div class="col-sm-6" align="left">
+              <button (click)="RemoveDrink(drink)" class="btn btn-primary w-100">Remove
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--/.Card content-->
+    </div>
+    <!--/.Card-->
+  </div>
+</div>

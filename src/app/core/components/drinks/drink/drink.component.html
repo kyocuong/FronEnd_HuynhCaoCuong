@@ -1,0 +1,35 @@
+<mat-toolbar>
+  <span>{{drinkService.form.controls['$key'].value?"Modify Drink":"New Drink"}}</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1">
+    <mat-icon>clear</mat-icon>
+  </button>
+</mat-toolbar>
+<form [formGroup]="drinkService.form" class="normal-form" (submit)="onSubmit()">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <input type="hidden" formControlName="$key">
+        <mat-form-field>
+          <input formControlName="code" matInput placeholder="Drink Code*">
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="drinkName" matInput placeholder="Drink Name*">
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="imageUrl" matInput placeholder="Image Url(Optional)">
+          </mat-form-field>
+        <mat-form-field>
+          <input formControlName="price" matInput placeholder="Price">
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+        <div class="button-row">
+          <button mat-raised-button color="primary" type="submit" [disabled]="drinkService.form.invalid">Submit</button>
+          <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>
